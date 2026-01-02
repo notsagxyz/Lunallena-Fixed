@@ -361,7 +361,7 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 }
 
 div[data-test="search-results"] div[class*="_solidHeader_"] {
-    --topSpacing: 75px !important;
+    margin-top: 50px !important;
     position: fixed !important;
     right: 0;
     left: 0;
@@ -379,11 +379,11 @@ div[data-test="search-results"] div[class*="_solidHeader_"] {
     margin: auto !important;
 }
 
-div[data-test="search-results"] div[class*="_divider_"] {
-    border: none !important;
+div[class*="_divider_"] {
+    height: 0px !important;
 }
 
 div[data-test="search-results"] div[class*="_container_"]::before,
 div[data-test="search-results"] div[class*="_solidHeader_"]::before {
-    display: none !important;
+    opacity: 0 !important;
 }
