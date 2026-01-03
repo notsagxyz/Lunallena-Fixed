@@ -12,7 +12,7 @@
     background-color: transparent !important;
     position: relative;
     margin-left: var(--sidebarWidth);
-    z-index: 99;
+    z-index: 25;
 }
 
 /* Window navigation buttons */
