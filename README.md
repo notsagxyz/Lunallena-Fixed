@@ -37,4 +37,5 @@ Lunallena is specifically tweaked for the new sidebar. To activate it:
 3.  Look for **Sidebar 3.0** and toggle it to **Enabled**.
 
 ---
-Created with ❤️ by Acercandr0
+## 🧉 Made with cariño by [@Acercandr0](https://github.com/Acercandr0)
+Enjoy it. Fork it. Remix it. Make it yours.
