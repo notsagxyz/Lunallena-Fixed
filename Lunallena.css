@@ -3,36 +3,62 @@
    ========================================================= */
 
 /* =========================================================
+   VARIABLES
+   ========================================================= */
+:root {
+    /* Backgrounds */
+    --bg-transparent: transparent;
+    --bg-glass-dark: rgba(0, 0, 0, 0.3);
+    --bg-glass-darker: rgba(0, 0, 0, 0.5);
+    --bg-glass-darkest: rgba(0, 0, 0, 0.6);
+    --bg-glass-light: rgba(0, 0, 0, 0.3);
+    --bg-glass-search: rgba(255, 255, 255, 0.05);
+    --bg-solid-black: rgb(0, 0, 0);
+    --bg-solid-dark: rgba(0, 0, 0, 0.9);
+    --bg-shortcut: rgba(255, 255, 255, 0.07);
+    --bg-shortcut-hover: rgba(255, 255, 255, 0.15);
+    --bg-button-hover: rgba(255, 255, 255, 0.12);
+    --bg-search-results: rgba(0, 0, 0, 0.5);
+    
+    /* Backdrop Filter */
+    --blur-glass: blur(20px) saturate(3);
+    --blur-now-playing: blur(70px) saturate(2);
+    --blur-play-queue: blur(35px) saturate(2);
+    --blur-playlist: blur(17px) saturate(1.5);
+    
+    /* Borders */
+    --border-glass: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================================
    TITLEBAR
    ========================================================= */
 
 [class*="_bar_"] {
     margin-bottom: -30px !important;
     margin-left: var(--sidebarWidth);
-    background-color: transparent !important;
+    background-color: var(--bg-transparent) !important;
     position: relative;
 }
 
+[class*="_title_"] span {
+    color: white !important;
+}
+
 div[class*="_controls_"] {
-    margin-left: auto !important;
-    display: flex !important;
-    align-items: center !important;
     position: relative !important;
     right: var(--sidebarWidth) !important;
 }
 
 div[class*="_controls_"] button[class*="_button_"] {
-    transform: scale(0.9) !important;
-    background: transparent !important;
-    transition: color 0.2s ease, transform 0.2s ease !important;
+    background: var(--bg-transparent) !important;
 }
 
 div[class*="_controls_"] button[class*="_button_"] svg {
-    color: rgba(255, 255, 255, 0.4) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
 }
 
 div[class*="_controls_"] button[class*="_button_"]:hover svg {
-    fill: rgba(255, 255, 255, 1) !important;
     color: rgba(255, 255, 255, 1) !important;
 }
 
@@ -40,10 +66,10 @@ div[class*="_controls_"] button[class*="_button_"]:hover svg {
    HEADER
    ========================================================= */
 #mainHeader:not([data-test="header"]) {
-    background-color: rgba(0, 0, 0, 0.4) !important;
+    background-color: var(--bg-glass-dark) !important;
     margin-bottom: calc((var(--headerHeight)) *-1) !important;
-    backdrop-filter: blur(15px) saturate(2) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: var(--blur-glass) !important;
+    border-bottom: var(--border-glass) !important;
     padding-top: 50px !important;
 }
 
@@ -53,8 +79,8 @@ div[class*="header"][class*="solidHeader"] {
 }
 
 [data-type="search-field"] {
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--bg-glass-search) !important;
+    border: var(--border-glass) !important;
     border-radius: 30px !important;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
@@ -70,24 +96,23 @@ div[class*="header"][class*="solidHeader"] {
     width: 95% !important;
     left: 50% !important;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    backdrop-filter: blur(15px) saturate(2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: none !important;
-}
+    background-color: var(--bg-glass-light) !important;
+    backdrop-filter: var(--blur-glass) !important;
+    border: var(--border-glass) !important;
+    box-shadow: 0 0px 40px 30px rgba(0,0,0,0.5), 0 4px 10px rgba(0,0,0,0.1) !important;}
 
 /* =========================================================
    NOW PLAYING
    ========================================================= */
 
 [class*="_nowPlayingContainer_"] {
-    background-color: rgba(0, 0, 0, 0.3) !important;
+    background-color: var(--bg-glass-light) !important;
     background-image: none !important;
-    backdrop-filter: blur(70px) saturate(1.2) !important;
+    backdrop-filter: var(--blur-now-playing) !important;
 }
 
 [class*="_bottomGradient_"] {
-    background-color: transparent;
+    background-color: var(--bg-transparent);
     background-image: none !important;
 }
 
@@ -97,8 +122,8 @@ div[class*="_imageBorder_"] {
 
 div[class*="_nativeRangeContainer_"] {
     transform: translateY(-20px) scale(1.2) !important;
-    background-color: rgb(0, 0, 0) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--bg-solid-black) !important;
+    border: var(--border-glass) !important;
     box-shadow: none;
 }
 
@@ -108,14 +133,14 @@ div[class*="_nativeRangeContainer_"] {
 
 button[data-test="close-now-playing"],
 button[data-test="request-fullscreen"] {
-    background-color: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--bg-transparent) !important;
+    border: var(--border-glass) !important;
     transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease !important;
 }
 
 button[data-test="close-now-playing"]:hover,
 button[data-test="request-fullscreen"]:hover {
-    background-color: rgba(255, 255, 255, 0.12) !important;
+    background-color: var(--bg-button-hover) !important;
 }
 
 /* =========================================================
@@ -124,35 +149,37 @@ button[data-test="request-fullscreen"]:hover {
 
 #playQueueSidebar {
     margin-right: -2px !important;
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    backdrop-filter: blur(35px) saturate(1.2) !important;
+    background-color: var(--bg-glass-darker) !important;
+    border: var(--border-glass) !important;
+    backdrop-filter: var(--blur-play-queue) !important;
+    height: 80%;
 }
 
 div[class*="_playQueueWithHeader_"] {
-    bottom: initial !important;
     gap: 5px !important;
+    top: 1.5%;
+    right: 1.5%;
 }
 
 div[class*="_playQueueWithoutHeader_"] {
-    bottom: initial !important;
     gap: 5px !important;
-    margin-top: -45px !important;
+    top: 64px;
+    left: 360px;
+    right: auto;
 }
 
 button[data-test^="playqueue-"],
 button[data-test^="nowplaying-playqueue-"] {
-    scale: 0.85;
-    margin-top: -15px;
-    background-color: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    scale: 0.9;
+    background-color: var(--bg-transparent) !important;
+    border: var(--border-glass) !important;
     overflow: hidden !important;
     transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease !important;
 }
 
 button[data-test^="playqueue-"]:hover,
 button[data-test^="nowplaying-playqueue-"]:hover {
-    background-color: rgba(255, 255, 255, 0.12) !important;
+    background-color: var(--bg-button-hover) !important;
 }
 
 /* =========================================================
@@ -161,8 +188,8 @@ button[data-test^="nowplaying-playqueue-"]:hover {
 
 [class*="contextMenu"][role="menu"] {
     position: relative;
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--bg-transparent);
+    border: var(--border-glass) !important;
     border-radius: 10px;
     box-shadow: none;
 }
@@ -171,8 +198,8 @@ button[data-test^="nowplaying-playqueue-"]:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(15px) saturate(2) !important;
+    background-color: var(--bg-glass-darkest);
+    backdrop-filter: var(--blur-glass) !important;
     border-radius: inherit;
 }
 
@@ -182,8 +209,8 @@ button[data-test^="nowplaying-playqueue-"]:hover {
 
 [class*="_subMenu_"] {
     position: relative;
-    background-color: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--bg-transparent) !important;
+    border: var(--border-glass) !important;
     border-radius: 15px;
     box-shadow: none;
     overflow: hidden;
@@ -194,8 +221,8 @@ button[data-test^="nowplaying-playqueue-"]:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px) saturate(2) !important;
+    background-color: var(--bg-glass-dark);
+    backdrop-filter: var(--blur-glass) !important;
     border-radius: inherit;
     z-index: 0;
 }
@@ -206,9 +233,9 @@ button[data-test^="nowplaying-playqueue-"]:hover {
 }
 
 [role="menu"][class*="_submenu"] {
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px) saturate(2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--bg-glass-dark);
+    backdrop-filter: var(--blur-glass) !important;
+    border: var(--border-glass) !important;
     border-radius: 10px;
     box-shadow: none;
     z-index: 1;
@@ -221,12 +248,12 @@ button[data-test^="nowplaying-playqueue-"]:hover {
 
 div[data-test="query-suggestions"] {
     height: 75vh;
-    background-color: rgb(0, 0, 0) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--bg-solid-black) !important;
+    border: var(--border-glass) !important;
 }
 
 div[data-test="query-suggestions"] div[class*="_icon_"] {
-    background: transparent !important;
+    background: var(--bg-transparent) !important;
 }
 
 /* =========================================================
@@ -235,16 +262,16 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 
 [class*="_marketTooltipContainer_"] {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px) saturate(2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--bg-glass-dark);
+    backdrop-filter: var(--blur-glass) !important;
+    border: var(--border-glass) !important;
     color: white;
 }
 
 [class*="_tooltipText_"] {
     margin-bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--bg-solid-dark);
+    border: var(--border-glass) !important;
     color: white;
 }
 
@@ -272,10 +299,12 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 
 [class*="_sidebarWrapper"] {
     padding-top: 0;
+    
 }
 
 aside[aria-label="Navigation sidebar"] {
     min-height: 100vh !important;
+
 }
 
 aside[aria-label="Navigation sidebar"] div[class^="_scrollableContent_"] {
@@ -301,6 +330,7 @@ aside[aria-label="Navigation sidebar"] div[class^="_scrollableContent_"] {
 #main {
     margin-top: 0px;
     padding-top: 40px;
+    padding-bottom: var(--miniPlayerHeight);
 }
 
 [class*="MuiContainer-root"] {
@@ -315,9 +345,9 @@ aside[aria-label="Navigation sidebar"] div[class^="_scrollableContent_"] {
 [class^="_smallHeader_"] {
     width: 100% !important;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.4) !important;
-    backdrop-filter: blur(17px) saturate(2) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--bg-glass-dark) !important;
+    backdrop-filter: var(--blur-playlist) !important;
+    border-bottom: var(--border-glass) !important;
 }
 
 [class^="_smallHeader_"] [class*="_coverArt_"] {
@@ -333,13 +363,13 @@ div[class^="_smallHeader_"]::before {
    ========================================================= */
 
 [class*="_shortcutItem_"] {
-    background-color: rgba(255, 255, 255, 0.07) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--bg-shortcut) !important;
+    border: var(--border-glass) !important;
     box-shadow: none;
 }
 
 [class*="_shortcutItem_"]:hover {
-    background-color: rgba(255, 255, 255, 0.15) !important;
+    background-color: var(--bg-shortcut-hover) !important;
 }
 
 [class*="_card_"] [class*="_imageContainer_"] {
@@ -355,7 +385,7 @@ div[data-test="search-results"] div[class*="_solidHeader_"] {
     position: absolute !important;
     right: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7) !important;
+    background-color: var(--bg-search-results) !important;
     box-shadow: none !important;
 }
 
@@ -379,13 +409,25 @@ div[data-test="search-results"] div[class*="_solidHeader_"]::before {
 }
 
 /* =========================================================
-   MISC
+   CREDITS PAGE
    ========================================================= */
 
-[class*="_title_"] span {
-    color: white !important;
+[class*="creditsPage"] {
+    margin-top: var(h) !important;
 }
 
-[data-test^="streaming-audio-quality"] [class*="_circle_"] {
-    border-color: rgba(255, 255, 255, 0.3);
+/* =========================================================
+   VINYL SPINNING 📀
+   ========================================================= */
+
+@keyframes spin-lp {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+[id*="nowPlaying"] figure[data-test="now-playing-image"] {
+    position: relative !important;
+    border-radius: 50% !important;
+    animation: spin-lp 20s linear infinite !important;
+    overflow: hidden !important;
 }
