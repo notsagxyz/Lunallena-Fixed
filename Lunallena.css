@@ -35,7 +35,7 @@
    ========================================================= */
 
 [class*="_bar_"] {
-    margin-bottom: -30px !important;
+    margin-bottom: -30px;
     margin-left: var(--sidebarWidth);
     background-color: var(--bg-transparent) !important;
     position: relative;
@@ -46,42 +46,42 @@
 }
 
 div[class*="_controls_"] {
-    position: relative !important;
-    right: var(--sidebarWidth) !important;
+    position: relative;
+    right: var(--sidebarWidth);
 }
 
 div[class*="_controls_"] button[class*="_button_"] {
-    background: var(--bg-transparent) !important;
+    background: var(--bg-transparent);
 }
 
 div[class*="_controls_"] button[class*="_button_"] svg {
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 div[class*="_controls_"] button[class*="_button_"]:hover svg {
-    color: rgba(255, 255, 255, 1) !important;
+    color: rgba(255, 255, 255, 1);
 }
 
 /* =========================================================
    HEADER
    ========================================================= */
 #mainHeader:not([data-test="header"]) {
-    background-color: var(--bg-glass-dark) !important;
-    margin-bottom: calc((var(--headerHeight)) *-1) !important;
-    backdrop-filter: var(--blur-glass) !important;
-    border-bottom: var(--border-glass) !important;
-    padding-top: 50px !important;
+    background-color: var(--bg-glass-dark);
+    margin-bottom: calc((var(--headerHeight)) *-1);
+    backdrop-filter: var(--blur-glass);
+    border-bottom: var(--border-glass);
+    padding-top: 50px;
 }
 
 div[class*="header"][class*="solidHeader"] {
-    padding-top: 0px !important;
+    padding-top: 0px;
     margin-top: -15px;
 }
 
 [data-type="search-field"] {
     background-color: var(--bg-glass-search) !important;
-    border: var(--border-glass) !important;
-    border-radius: 30px !important;
+    border: var(--border-glass);
+    border-radius: 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -92,28 +92,29 @@ div[class*="header"][class*="solidHeader"] {
 [data-test="footer-player"] {
     border-radius: 15px;
     position: fixed;
-    bottom: 20px !important;
-    width: 95% !important;
-    left: 50% !important;
+    bottom: 20px;
+    width: 90%;
+    left: 50%;
     transform: translateX(-50%);
     background-color: var(--bg-glass-light) !important;
-    backdrop-filter: var(--blur-glass) !important;
-    border: var(--border-glass) !important;
-    box-shadow: 0 0px 40px 30px rgba(0,0,0,0.5), 0 4px 10px rgba(0,0,0,0.1) !important;}
+    backdrop-filter: var(--blur-glass);
+    border: var(--border-glass);
+    box-shadow: 0 0px 40px 30px rgba(0,0,0,0.5), 0 4px 10px rgba(0,0,0,0.1);
+}
 
 /* =========================================================
    NOW PLAYING
    ========================================================= */
 
 [class*="_nowPlayingContainer_"] {
-    background-color: var(--bg-glass-light) !important;
+    background-color: var(--bg-glass-light);
     background-image: none !important;
-    backdrop-filter: var(--blur-now-playing) !important;
+    backdrop-filter: var(--blur-now-playing);
 }
 
 [class*="_bottomGradient_"] {
     background-color: var(--bg-transparent);
-    background-image: none !important;
+    background-image: none;
 }
 
 div[class*="_imageBorder_"] {
@@ -121,26 +122,26 @@ div[class*="_imageBorder_"] {
 }
 
 div[class*="_nativeRangeContainer_"] {
-    transform: translateY(-20px) scale(1.2) !important;
-    background-color: var(--bg-solid-black) !important;
-    border: var(--border-glass) !important;
+    transform: translateY(-20px) scale(1.2);
+    background-color: var(--bg-solid-black);
+    border: var(--border-glass);
     box-shadow: none;
 }
 
 [class*="_nativeRange_"]::after {
-    display: none !important;
+    display: none;
 }
 
 button[data-test="close-now-playing"],
 button[data-test="request-fullscreen"] {
-    background-color: var(--bg-transparent) !important;
-    border: var(--border-glass) !important;
-    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease !important;
+    background-color: var(--bg-transparent);
+    border: var(--border-glass);
+    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
 }
 
 button[data-test="close-now-playing"]:hover,
 button[data-test="request-fullscreen"]:hover {
-    background-color: var(--bg-button-hover) !important;
+    background-color: var(--bg-button-hover);
 }
 
 /* =========================================================
@@ -148,21 +149,21 @@ button[data-test="request-fullscreen"]:hover {
    ========================================================= */
 
 #playQueueSidebar {
-    margin-right: -2px !important;
-    background-color: var(--bg-glass-darker) !important;
-    border: var(--border-glass) !important;
-    backdrop-filter: var(--blur-play-queue) !important;
+    margin-right: -2px;
+    background-color: var(--bg-glass-darker);
+    border: var(--border-glass);
+    backdrop-filter: var(--blur-play-queue);
     height: 80%;
 }
 
 div[class*="_playQueueWithHeader_"] {
-    gap: 5px !important;
+    gap: 5px;
     top: 1.5%;
     right: 1.5%;
 }
 
 div[class*="_playQueueWithoutHeader_"] {
-    gap: 5px !important;
+    gap: 5px;
     top: 64px;
     left: 360px;
     right: auto;
@@ -171,15 +172,15 @@ div[class*="_playQueueWithoutHeader_"] {
 button[data-test^="playqueue-"],
 button[data-test^="nowplaying-playqueue-"] {
     scale: 0.9;
-    background-color: var(--bg-transparent) !important;
-    border: var(--border-glass) !important;
-    overflow: hidden !important;
-    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease !important;
+    background-color: var(--bg-transparent);
+    border: var(--border-glass);
+    overflow: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
 }
 
 button[data-test^="playqueue-"]:hover,
 button[data-test^="nowplaying-playqueue-"]:hover {
-    background-color: var(--bg-button-hover) !important;
+    background-color: var(--bg-button-hover);
 }
 
 /* =========================================================
@@ -189,7 +190,7 @@ button[data-test^="nowplaying-playqueue-"]:hover {
 [class*="contextMenu"][role="menu"] {
     position: relative;
     background-color: var(--bg-transparent);
-    border: var(--border-glass) !important;
+    border: var(--border-glass);
     border-radius: 10px;
     box-shadow: none;
 }
@@ -199,7 +200,7 @@ button[data-test^="nowplaying-playqueue-"]:hover {
     position: absolute;
     inset: 0;
     background-color: var(--bg-glass-darkest);
-    backdrop-filter: var(--blur-glass) !important;
+    backdrop-filter: var(--blur-glass);
     border-radius: inherit;
 }
 
@@ -209,8 +210,8 @@ button[data-test^="nowplaying-playqueue-"]:hover {
 
 [class*="_subMenu_"] {
     position: relative;
-    background-color: var(--bg-transparent) !important;
-    border: var(--border-glass) !important;
+    background-color: var(--bg-transparent);
+    border: var(--border-glass);
     border-radius: 15px;
     box-shadow: none;
     overflow: hidden;
@@ -222,7 +223,7 @@ button[data-test^="nowplaying-playqueue-"]:hover {
     position: absolute;
     inset: 0;
     background-color: var(--bg-glass-dark);
-    backdrop-filter: var(--blur-glass) !important;
+    backdrop-filter: var(--blur-glass);
     border-radius: inherit;
     z-index: 0;
 }
@@ -234,8 +235,8 @@ button[data-test^="nowplaying-playqueue-"]:hover {
 
 [role="menu"][class*="_submenu"] {
     background-color: var(--bg-glass-dark);
-    backdrop-filter: var(--blur-glass) !important;
-    border: var(--border-glass) !important;
+    backdrop-filter: var(--blur-glass);
+    border: var(--border-glass);
     border-radius: 10px;
     box-shadow: none;
     z-index: 1;
@@ -248,12 +249,12 @@ button[data-test^="nowplaying-playqueue-"]:hover {
 
 div[data-test="query-suggestions"] {
     height: 75vh;
-    background-color: var(--bg-solid-black) !important;
-    border: var(--border-glass) !important;
+    background-color: var(--bg-solid-black);
+    border: var(--border-glass);
 }
 
 div[data-test="query-suggestions"] div[class*="_icon_"] {
-    background: var(--bg-transparent) !important;
+    background: var(--bg-transparent);
 }
 
 /* =========================================================
@@ -263,21 +264,21 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 [class*="_marketTooltipContainer_"] {
     position: relative;
     background-color: var(--bg-glass-dark);
-    backdrop-filter: var(--blur-glass) !important;
-    border: var(--border-glass) !important;
+    backdrop-filter: var(--blur-glass);
+    border: var(--border-glass);
     color: white;
 }
 
 [class*="_tooltipText_"] {
     margin-bottom: 10px;
     background-color: var(--bg-solid-dark);
-    border: var(--border-glass) !important;
+    border: var(--border-glass);
     color: white;
 }
 
 [class*="_tooltipText_"]::after,
 [class*="_sidebarTooltip_"]::after {
-    display: none !important;
+    display: none;
 }
 
 /* =========================================================
@@ -285,16 +286,16 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
    ========================================================= */
 
 * {
-    scrollbar-width: none !important;
+    scrollbar-width: none;
 }
 
 .os-scrollbar {
-    display: none !important;
+    display: none;
 }
 
 .is-windows.is-desktop {
-    min-height: 100vh !important;
-    overflow: hidden !important;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 [class*="_sidebarWrapper"] {
@@ -303,23 +304,23 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 }
 
 aside[aria-label="Navigation sidebar"] {
-    min-height: 100vh !important;
+    min-height: 100vh;
 
 }
 
 aside[aria-label="Navigation sidebar"] div[class^="_scrollableContent_"] {
-    padding-bottom: calc(var(--miniPlayerHeight) + 25px) !important;
+    padding-bottom: calc(var(--miniPlayerHeight) + 25px);
 }
 
 [class*="background"] {
     margin-top: calc(var(--headerHeight) + 35px);
-    overflow: hidden !important;
+    overflow: hidden;
     height: auto;
 }
 
 [class*="_backgroundBlur_"] {
-    padding: 0 !important;
-    position: relative !important;
+    padding: 0;
+    position: relative;
 }
 
 .mainContent {
@@ -334,7 +335,7 @@ aside[aria-label="Navigation sidebar"] div[class^="_scrollableContent_"] {
 }
 
 [class*="MuiContainer-root"] {
-    padding-top: calc(var(--headerHeight) + 45px) !important;
+    padding-top: calc(var(--headerHeight) + 45px);
     padding-bottom: var(--miniPlayerHeight);
 }
 
@@ -343,15 +344,15 @@ aside[aria-label="Navigation sidebar"] div[class^="_scrollableContent_"] {
    ========================================================= */
 
 [class^="_smallHeader_"] {
-    width: 100% !important;
+    width: 100%;
     left: 0;
-    background-color: var(--bg-glass-dark) !important;
-    backdrop-filter: var(--blur-playlist) !important;
-    border-bottom: var(--border-glass) !important;
+    background-color: var(--bg-glass-dark);
+    backdrop-filter: var(--blur-playlist);
+    border-bottom: var(--border-glass);
 }
 
 [class^="_smallHeader_"] [class*="_coverArt_"] {
-    margin-left: calc(var(--sidebarWidth) + 30px) !important;
+    margin-left: calc(var(--sidebarWidth) + 30px);
 }
 
 div[class^="_smallHeader_"]::before {
@@ -363,49 +364,48 @@ div[class^="_smallHeader_"]::before {
    ========================================================= */
 
 [class*="_shortcutItem_"] {
-    background-color: var(--bg-shortcut) !important;
-    border: var(--border-glass) !important;
+    background-color: var(--bg-shortcut);
+    border: var(--border-glass);
     box-shadow: none;
 }
 
 [class*="_shortcutItem_"]:hover {
-    background-color: var(--bg-shortcut-hover) !important;
+    background-color: var(--bg-shortcut-hover);
 }
 
 [class*="_card_"] [class*="_imageContainer_"] {
-    border-radius: 10px !important;
-    overflow: hidden !important;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 /* =========================================================
    SEARCH RESULTS
    ========================================================= */
 
-div[data-test="search-results"] div[class*="_solidHeader_"] {
-    position: absolute !important;
-    right: 0;
-    left: 0;
-    background-color: var(--bg-search-results) !important;
-    box-shadow: none !important;
+[data-test="search-results"] [class*="container"] {
+    padding-top: 50px !important;
+    background-color: var(--bg-search-results);
+    backdrop-filter: var(--blur-glass);
+
 }
 
 [class*="_resultsContainer_"],
 [class*="_mobilePageSearch_"] {
-    padding-left: 36px !important;
-    padding-right: 36px !important;
+    padding-left: 36px;
+    padding-right: 36px;
 }
 
 [data-test="search-pills"] {
-    margin: auto !important;
+    margin: auto;
 }
 
 div[class*="_divider_"] {
-    height: 0 !important;
+    height: 0;
 }
 
 div[data-test="search-results"] div[class*="_container_"]::before,
 div[data-test="search-results"] div[class*="_solidHeader_"]::before {
-    opacity: 0 !important;
+    opacity: 0;
 }
 
 /* =========================================================
@@ -413,21 +413,5 @@ div[data-test="search-results"] div[class*="_solidHeader_"]::before {
    ========================================================= */
 
 [class*="creditsPage"] {
-    margin-top: var(h) !important;
-}
-
-/* =========================================================
-   VINYL SPINNING 📀
-   ========================================================= */
-
-@keyframes spin-lp {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-[id*="nowPlaying"] figure[data-test="now-playing-image"] {
-    position: relative !important;
-    border-radius: 50% !important;
-    animation: spin-lp 20s linear infinite !important;
-    overflow: hidden !important;
+    margin-top: var(h);
 }
