@@ -300,9 +300,11 @@ aside[aria-label="Navigation sidebar"] div[class^="_scrollableContent_"] {
 }
 
 [class*="MuiContainer-root"] {
-    padding-top: calc(var(--headerHeight) + 40px);
+    padding-top: calc(var(--headerHeight) + -45px0px);
     padding-bottom: var(--miniPlayerHeight);
 }
+
+
 
 /* =========================================================
    PLAYLIST
@@ -348,7 +350,8 @@ div[class^="_smallHeader_"]::before {
    ========================================================= */
 
 [class*="_resultsPageWrapper_"][data-test="search-results"] {
-    padding: 0 !important;
+    padding: auto !important;
+    padding-top: 80px !important;
 }
 
 div[data-test="search-results"] div[class*="_solidHeader_"] {
