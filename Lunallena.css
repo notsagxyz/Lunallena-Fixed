@@ -342,8 +342,7 @@ aside[aria-label="Navigation sidebar"] div[class^="_scrollableContent_"] {
    ========================================================= */
 
 [class^="_smallHeader_"] {
-    width: 100% !important;
-    max-width: 100%;
+    min-width: 100% !important;
     left: 0;
     background-color: var(--bg-glass-dark) !important;
     backdrop-filter: var(--blur-playlist);
