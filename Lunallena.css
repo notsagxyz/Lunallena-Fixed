@@ -384,14 +384,435 @@ div[class^="_smallHeader_"]::before {
 
 [data-test="search-results"] [class*="container"] {
     padding-top: 50px !important;
+    margin-left: -40px;
+    margin-right: -40px;
     background-color: var(--bg-search-results);
     backdrop-filter: var(--blur-glass);
+    border-bottom: var(--border-glass);
 }
 
 [class*="_resultsContainer_"],
 [class*="_mobilePageSearch_"] {
-    padding-left: 36px;
-    padding-right: 36px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+[data-test="search-pills"] {
+    margin: auto;
+}
+
+div[class*="_divider_"] {
+    height: 0;
+}
+
+div[data-test="search-results"] div[class*="_container_"]::before,
+div[data-test="search-results"] div[class*="_solidHeader_"]::before {
+    opacity: 0;
+}
+
+/* =========================================================
+   CREDITS PAGE
+   ========================================================= */
+
+[class*="creditsPage"] {
+    margin-top: calc(var(--headerHeight) + 10px) !important;
+}/* =========================================================
+   LUNALLENA 🌕 by Acercandr0
+   ========================================================= */
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+:root {
+    /* Backgrounds */
+    --bg-transparent: transparent;
+    --bg-glass-dark: rgba(0, 0, 0, 0.3);
+    --bg-glass-darker: rgba(0, 0, 0, 0.5);
+    --bg-glass-darkest: rgba(0, 0, 0, 0.6);
+    --bg-glass-light: rgba(0, 0, 0, 0.3);
+    --bg-glass-search: rgba(255, 255, 255, 0.05);
+    --bg-solid-black: rgb(0, 0, 0);
+    --bg-solid-dark: rgba(0, 0, 0, 0.9);
+    --bg-shortcut: rgba(255, 255, 255, 0.07);
+    --bg-shortcut-hover: rgba(255, 255, 255, 0.15);
+    --bg-button-hover: rgba(255, 255, 255, 0.12);
+    --bg-search-results: rgba(0, 0, 0, 0.5);
+    
+    /* Backdrop Filter */
+    --blur-glass: blur(20px) saturate(3);
+    --blur-now-playing: blur(70px) saturate(2);
+    --blur-play-queue: blur(35px) saturate(2);
+    --blur-playlist: blur(17px) saturate(1.5);
+    
+    /* Borders */
+    --border-glass: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================================
+   TITLEBAR
+   ========================================================= */
+
+[class*="_bar_"] {
+    margin-bottom: -35px;
+    margin-top: 5px;
+    margin-left: 13px;
+    background: transparent !important;
+}
+
+[class*="_controls_"] {
+margin-right: 15px;
+}
+
+div[class*="_title_"] {
+    display: none !important;
+}
+
+div[class*="_bar_"] button[class*="_button_"] {
+    background: var(--bg-transparent);
+}
+
+div[class*="_bar_"] button[class*="_button_"] svg {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+div[class*="_bar_"] button[class*="_button_"]:hover svg {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+#mainHeader:not([data-test="header"]) {
+    background-color: var(--bg-glass-dark) !important;
+    margin-bottom: calc((var(--headerHeight)) *-1);
+    backdrop-filter: var(--blur-glass);
+    border-bottom: var(--border-glass);
+    padding-top: 50px;
+}
+
+div[class*="header"][class*="solidHeader"] {
+    padding-top: 0px;
+    margin-top: -15px;
+}
+
+[data-type="search-field"] {
+    background-color: var(--bg-glass-search) !important;
+    border: var(--border-glass);
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================
+   PLAYER
+   ========================================================= */
+
+[data-test="footer-player"] {
+    border-radius: 15px;
+    position: fixed;
+    bottom: 20px;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-glass-light) !important;
+    backdrop-filter: var(--blur-glass);
+    border: var(--border-glass);
+    box-shadow: 0 0px 40px 30px rgba(0,0,0,0.5), 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* =========================================================
+   NOW PLAYING
+   ========================================================= */
+
+[class*="_nowPlayingContainer_"] {
+    background-color: var(--bg-glass-light);
+    background-image: none !important;
+    backdrop-filter: var(--blur-now-playing);
+}
+
+[class*="_bottomGradient_"] {
+    background-image: none;
+}
+
+div[class*="_imageBorder_"] {
+    --border: 0;
+}
+
+div[class*="_nativeRangeContainer_"] {
+    transform: translateY(-20px) scale(1.2);
+    background-color: var(--bg-solid-black);
+    border: var(--border-glass);
+    box-shadow: none;
+}
+
+[class*="_nativeRange_"]::after {
+    display: none;
+}
+
+button[data-test="close-now-playing"],
+button[data-test="request-fullscreen"] {
+    background-color: var(--bg-transparent);
+    border: var(--border-glass);
+    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+button[data-test="close-now-playing"]:hover,
+button[data-test="request-fullscreen"]:hover {
+    background-color: var(--bg-button-hover);
+}
+
+/* =========================================================
+   PLAY QUEUE
+   ========================================================= */
+
+#playQueueSidebar {
+    margin-right: -2px;
+    background-color: var(--bg-glass-darker);
+    border: var(--border-glass);
+    backdrop-filter: var(--blur-play-queue);
+    height: 80%;
+}
+
+div[class*="_playQueueWithHeader_"] {
+    gap: 5px;
+    top: 1.5%;
+    right: 1.5%;
+}
+
+div[class*="_playQueueWithoutHeader_"] {
+    gap: 5px;
+    top: 64px;
+    left: 360px;
+    right: auto;
+}
+
+button[data-test^="playqueue-"],
+button[data-test^="nowplaying-playqueue-"] {
+    scale: 0.9;
+    background-color: var(--bg-transparent);
+    border: var(--border-glass);
+    overflow: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+button[data-test^="playqueue-"]:hover,
+button[data-test^="nowplaying-playqueue-"]:hover {
+    background-color: var(--bg-button-hover);
+}
+
+/* =========================================================
+   MENUS
+   ========================================================= */
+
+[class*="contextMenu"][role="menu"] {
+    position: relative;
+    background-color: var(--bg-transparent);
+    border: var(--border-glass);
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+[class*="contextMenu"][role="menu"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--bg-glass-darkest);
+    backdrop-filter: var(--blur-glass);
+    border-radius: inherit;
+}
+
+[class*="contextMenu"][role="menu"] > * {
+    position: relative;
+}
+
+[class*="_subMenu_"] {
+    position: relative;
+    background-color: var(--bg-transparent);
+    border: var(--border-glass);
+    border-radius: 15px;
+    box-shadow: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+[class*="_subMenu_"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--bg-glass-dark);
+    backdrop-filter: var(--blur-glass);
+    border-radius: inherit;
+    z-index: 0;
+}
+
+[class*="_subMenu_"] > * {
+    position: relative;
+    z-index: 1;
+}
+
+[role="menu"][class*="_submenu"] {
+    background-color: var(--bg-glass-dark);
+    backdrop-filter: var(--blur-glass);
+    border: var(--border-glass);
+    border-radius: 10px;
+    box-shadow: none;
+    z-index: 1;
+}
+
+[role="menu"][class*="_submenu"] > * {
+    position: relative;
+    z-index: 2;
+}
+
+div[data-test="query-suggestions"] {
+    height: 75vh;
+    background-color: var(--bg-solid-black);
+    border: var(--border-glass);
+}
+
+div[data-test="query-suggestions"] div[class*="_icon_"] {
+    background: var(--bg-transparent);
+}
+
+/* =========================================================
+   TOOLTIPS
+   ========================================================= */
+
+[class*="_marketTooltipContainer_"] {
+    position: relative;
+    background-color: var(--bg-glass-dark);
+    backdrop-filter: var(--blur-glass);
+    border: var(--border-glass);
+    color: white;
+}
+
+[class*="_tooltipText_"] {
+    margin-bottom: 10px;
+    background-color: var(--bg-solid-dark);
+    border: var(--border-glass);
+    color: white;
+}
+
+[class*="_tooltipText_"]::after,
+[class*="_sidebarTooltip_"]::after {
+    display: none;
+}
+
+/* =========================================================
+   LAYOUT & SCROLLING
+   ========================================================= */
+
+* {
+    scrollbar-width: none !important;
+}
+
+.os-scrollbar {
+    display: none;
+}
+
+.is-windows.is-desktop {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+[class*="_sidebarWrapper"] {
+    padding-top: 0;
+    
+}
+
+aside[aria-label="Navigation sidebar"] {
+    min-height: 100vh;
+    margin-top: 30px !important;
+}
+
+aside[aria-label="Navigation sidebar"] div[class^="_scrollableContent_"] {
+    padding-bottom: calc(var(--miniPlayerHeight) + 60px);
+}
+
+[data-test="artist-profile-header"] [class*="background"] {
+    margin-top: calc(var(--headerHeight) + 35px);
+    overflow: hidden;
+    height: 490px;
+}
+
+[class*="_backgroundBlur_"] {
+    height: 250px !important;
+    opacity: 0.8;
+}
+
+.mainContent {
+    padding-top: var(--headerHeight);
+    padding-bottom: var(--miniPlayerHeight);
+}
+
+#main {
+    margin-top: 0px;
+    padding-top: 40px;
+    padding-bottom: var(--miniPlayerHeight);
+}
+
+[class*="MuiContainer-root"] {
+    padding-top: calc(var(--headerHeight) + 45px);
+    padding-bottom: var(--miniPlayerHeight);
+}
+
+div[class*="tabPanelStyles"]:has(div[class*="playQueueTab"]) {
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* =========================================================
+   PLAYLIST
+   ========================================================= */
+
+[class^="_smallHeader_"] {
+    left: 0;
+    padding-left: calc(var(--sidebarWidth) + 40px) !important;
+    padding-right: calc(var(--sidebarWidth) + 20px) !important;
+    background-color: var(--bg-glass-dark) !important;
+    backdrop-filter: var(--blur-playlist);
+    border-bottom: var(--border-glass);
+}
+
+div[class^="_smallHeader_"]::before {
+    opacity: 0;
+}
+
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
+
+[class*="_shortcutItem_"] {
+    background-color: var(--bg-shortcut);
+    border: var(--border-glass);
+    box-shadow: none;
+}
+
+[class*="_shortcutItem_"]:hover {
+    background-color: var(--bg-shortcut-hover);
+}
+
+[class*="_card_"] [class*="_imageContainer_"] {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* =========================================================
+   SEARCH RESULTS
+   ========================================================= */
+
+[data-test="search-results"] [class*="container"] {
+    padding-top: 50px !important;
+    margin-left: -40px;
+    margin-right: -40px;
+    background-color: var(--bg-search-results);
+    backdrop-filter: var(--blur-glass);
+    border-bottom: var(--border-glass);
+}
+
+[class*="_resultsContainer_"],
+[class*="_mobilePageSearch_"] {
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 [data-test="search-pills"] {
