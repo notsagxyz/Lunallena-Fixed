@@ -337,11 +337,6 @@ aside[aria-label="Navigation sidebar"] div[class^="_scrollableContent_"] {
     padding-bottom: var(--miniPlayerHeight);
 }
 
-div[class*="tabPanelStyles"]:has(div[class*="playQueueTab"]) {
-    height: auto !important;
-    overflow: visible !important;
-}
-
 /* =========================================================
    PLAYLIST
    ========================================================= */
