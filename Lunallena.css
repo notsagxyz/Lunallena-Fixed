@@ -6,6 +6,7 @@
 /* =========================================================
    VARIABLES
    ========================================================= */
+
 :root {
     /* Backgrounds */
     --bg-transparent: transparent;
@@ -25,6 +26,7 @@
     --blur-glass: blur(30px) saturate(2);
     --blur-now-playing: blur(50px) saturate(2);
     --blur-play-queue: blur(25px) saturate(2);
+    --blur-metadata: blur(100px) saturate (5);
     
     /* Borders */
     --border-glass: 1px solid rgba(255, 255, 255, 0.1);
@@ -33,6 +35,20 @@
     --moonlight: 
     0px 0px 300px rgba(255, 255, 255, 0.1), 
     0px 0px 40px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* =========================================================
+   METADATA TAGS
+   ========================================================= */
+
+[class="format-info"] {
+    font-size: 12px;
+    width: 55px;
+    background: var(--bg-glass-light);
+}
+
+[data-test="footer-player"] {
+    grid-auto-columns: minmax(auto, calc(32vw - 55px));
 }
 
 /* =========================================================
