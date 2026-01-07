@@ -7,7 +7,7 @@ Designed to work with Sidebar 3.0.
 ![Preview](previews/2.png)
 ![Preview](previews/3.png)
 ![Preview](previews/4.png)
-![Preview](previews/5.png)
+
 ---
 
 https://github.com/user-attachments/assets/70801188-6560-4275-ae0a-af5ed157edd1
