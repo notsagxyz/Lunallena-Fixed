@@ -25,8 +25,11 @@ Follow these steps to get Lunallena up and running:
 2.  **Open Luna Settings:**
     After installing, open Tidal, click the **three-dot menu** next to your profile icon, and select **Luna settings**.
 
-3.  **Install Themer Plugin:**
-    Go to the **Plugin Store** tab, scroll down until you find **Themer**, and click install.
+3.  **Install Required Plugins:**
+    Go to the **Plugin Store** tab and install the following:
+    * **Themer**: Required to apply the CSS code.
+    * **Tidal Tags**: Required to display playback quality and metadata tags.
+    * Also, ensure you have the core plugins by [**Inrixia**](https://github.com/Inrixia) installed.
 
 4.  **Apply Theme:**
     Press `Ctrl + E` to open the theme input box and paste the [Lunallena.css](https://github.com/Acercandr0/Lunallena/blob/main/Lunallena.css) code.
