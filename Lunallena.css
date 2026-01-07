@@ -188,8 +188,8 @@ div[class*="header"][class*="solidHeader"] {
     margin-top: 62px;
 }
 
-[class*="dataContainer"]:before {
-    height: 100vh;
+[class*="dataContainer"]::before {
+    height: 100% !important;
 }
 
 /* =========================================================
