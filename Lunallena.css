@@ -14,8 +14,8 @@
     --bg-glass-darker: rgba(30, 30, 30, 0.5);
     --bg-glass-darkest: rgba(10, 10, 10, 0);
     --bg-glass-light: rgba(255, 255, 255, 0.05);
-    --bg-solid: rgba(120, 120, 110, 1);
-    --bg-solid2: rgba(120, 120, 110, 0.4);
+    --bg-solid: rgb(60, 60, 60);
+    --bg-solid2: rgba(66, 66, 66, 0.4);
     --bg-shortcut: rgba(255, 255, 255, 0);
     --bg-shortcut-hover: rgba(255, 255, 255, 0.1);
     --bg-button-hover: rgba(255, 255, 255, 0.12);
@@ -565,22 +565,22 @@ div[class^="_smallHeader_"]::before {
 /* =========================================================
    SEARCH RESULTS
    ========================================================= */
-
-[data-test="search-results"] [class*="container"] {
+   
+[data-test="search-results"] [class*="container"]:not(.quality-tag-container) {
     top: -17px;
     padding-top: 30px;
-    margin-left: -40px;
-    margin-right: -40px;
+    margin-left: -5%;
+    margin-right: -5%;
+    right: 0;
     background-color: transparent;
     backdrop-filter: var(--blur-glass);
     border-bottom: var(--border-glass);
 }
 
-
 [class*="_resultsContainer_"],
 [class*="_mobilePageSearch_"] {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 0px;
+    padding-right: 15px;
     padding-top: 50px;
 }
 
