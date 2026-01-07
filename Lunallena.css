@@ -1,7 +1,7 @@
 /* =========================================================
    LUNALLENA 🌕 by Acercandr0
+   Theme for Tidaluna + Sidebar 3.0
    ========================================================= */
-
 
 /* =========================================================
    VARIABLES
@@ -13,7 +13,7 @@
     --bg-glass-darker: rgba(30, 30, 30, 0.5);
     --bg-glass-darkest: rgba(10, 10, 10, 0);
     --bg-glass-light: rgba(255, 255, 255, 0.05);
-    --bg-solid: rgba(120, 120, 110, 0.9);
+    --bg-solid: rgba(120, 120, 110, 1);
     --bg-solid2: rgba(120, 120, 110, 0.4);
     --bg-shortcut: rgba(255, 255, 255, 0);
     --bg-shortcut-hover: rgba(255, 255, 255, 0.1);
@@ -149,7 +149,7 @@ div[class*="header"][class*="solidHeader"] {
 }
 
 [class*="_sectionHeader_"] {
-    background: none;
+    background: var(--bgeneral);
 }
 
 /* Artist page */
@@ -176,11 +176,6 @@ div[class*="header"][class*="solidHeader"] {
 
 [data-test="home-page-feed"] {
     margin-top: 62px;
-}
-
-[class*="MuiContainer-root"] {
-    padding-top: calc(var(--headerHeight) + 45px);
-    padding-bottom: var(--miniPlayerHeight);
 }
 
 /* =========================================================
@@ -211,7 +206,7 @@ div[class*="header"][class*="solidHeader"] {
 }
 
 [class*="imageryContainer"] {
-    border-radius: 100% !important;
+    border-radius: 100VH !important;
     scale: 1.1;
     animation: spin-lp 20s linear infinite !important;
     box-shadow: var(--moonlight);
@@ -221,7 +216,7 @@ div[class*="header"][class*="solidHeader"] {
 }
 
 [class*="_currentMediaItemDetails_"] {
-    margin-left: 80px;
+    margin-left: 83px;
 }
 
 div:has(> [class*="imageryContainer"]) {
@@ -242,9 +237,9 @@ div:has(> [class*="imageryContainer"])::before {
     pointer-events: none;
     border-radius: 50%;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: 0.1;
+    opacity: 0.2;
     mix-blend-mode: screen;
-    mask-image: radial-gradient(circle, black 0%, transparent 70%);
+    mask-image: radial-gradient(circle, black 0%, transparent 50%);
 }
 
 /* =========================================================
@@ -435,7 +430,7 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 }
 
 /* =========================================================
-   LAYOUT & SCROLLING
+   SCROLLBARS
    ========================================================= */
 
 * {
@@ -451,23 +446,18 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     overflow: hidden;
 }
 
-[class*="_sidebarWrapper"] {
-    padding-top: 0;
-}
-
 /* =========================================================
    SIDEBAR
    ========================================================= */
 
 [aria-label="Navigation sidebar"] {
-    padding-top: 30px !important;
     background-color: var(--bgeneral);
+    padding-top: 30px;
 }
 
-aside[aria-label="Navigation sidebar"] div[class^="_scrollableContent_"] {
-    padding-bottom: calc(var(--miniPlayerHeight) + 60px);
+[aria-label="Playlists"] {
+    padding-bottom: 100px;
 }
-
 /* Playlists */
 [aria-label="Playlists"] [class*="_contentItem_"] {
     filter: grayscale(60%) opacity(15%); 
@@ -493,13 +483,17 @@ aside[aria-label="Navigation sidebar"] div[class^="_scrollableContent_"] {
     left: 0;
     padding-left: calc(var(--sidebarWidth) + 40px) !important;
     padding-right: calc(var(--sidebarWidth) + 20px) !important;
-    background-color: var(--bg-glass-dark) !important;
-    backdrop-filter: var(--blur-playlist);
+    background-color: var(--bg-glass-light) !important;
+    backdrop-filter: var(--blur-glass);
     border-bottom: var(--border-glass);
 }
 
 div[class^="_smallHeader_"]::before {
     opacity: 0;
+}
+
+[class*="descriptionText"] {
+    color: rgb(239, 238, 205);
 }
 
 /* =========================================================
@@ -530,7 +524,7 @@ div[class^="_smallHeader_"]::before {
     border-radius: 7px;
     margin-left: 10px;
     overflow: hidden;
-    filter: grayscale(60%) opacity(15%);
+    filter: grayscale(50%) opacity(10%);
     transform: translateY(0) scale(1);
     transition: filter 0.6s ease-in-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -585,12 +579,4 @@ div[class*="_divider_"] {
 div[data-test="search-results"] div[class*="_container_"]::before,
 div[data-test="search-results"] div[class*="_solidHeader_"]::before {
     opacity: 0;
-}
-
-/* =========================================================
-   CREDITS PAGE
-   ========================================================= */
-
-[class*="creditsPage"] {
-    margin-top: calc(var(--headerHeight) + 10px) !important;
 }
