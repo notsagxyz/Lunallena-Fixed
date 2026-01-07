@@ -19,9 +19,8 @@
     --bg-shortcut: rgba(255, 255, 255, 0);
     --bg-shortcut-hover: rgba(255, 255, 255, 0.1);
     --bg-button-hover: rgba(255, 255, 255, 0.12);
-    --bg-search-results: rgba(0, 0, 0, 0.5);
     --bgeneral: rgb(16, 16, 16);
-    
+
     /* Backdrop Filter */
     --blur-glass: blur(30px) saturate(2);
     --blur-now-playing: blur(50px) saturate(2);
@@ -153,11 +152,6 @@ div[class*="_bar_"] button[class*="_button_"]:hover svg {
     background-color: var(--bg-solid) !important;
     opacity: 0.3;
 }
-
-/* Nothing to see here 
-[data-test="header-profile-menu-button"] {
-}
-*/
 
 div[class*="header"][class*="solidHeader"] {
     padding-top: 0px;
@@ -569,23 +563,25 @@ div[class^="_smallHeader_"]::before {
    ========================================================= */
 
 [data-test="search-results"] [class*="container"] {
-    padding-top: 50px !important;
-    margin-top: -50px;
+    top: -17px;
+    padding-top: 30px;
     margin-left: -40px;
     margin-right: -40px;
-    background-color: var(--bg-search-results);
+    background-color: transparent;
     backdrop-filter: var(--blur-glass);
     border-bottom: var(--border-glass);
 }
+
 
 [class*="_resultsContainer_"],
 [class*="_mobilePageSearch_"] {
     padding-left: 50px;
     padding-right: 50px;
+    padding-top: 50px;
 }
 
 [data-test="search-pills"] {
-    margin: auto;
+    margin-left: 50px;
 }
 
 div[class*="_divider_"] {
