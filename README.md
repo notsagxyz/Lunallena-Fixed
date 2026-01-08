@@ -29,7 +29,6 @@ Follow these steps to get Lunallena up and running:
     Go to the **Plugin Store** tab and install the following:
     * **Themer**: Required to apply the CSS code.
     * **Tidal Tags**: Required to display playback quality and metadata tags.
-    * Also, ensure you have the core plugins by [**Inrixia**](https://github.com/Inrixia) installed.
 
 4.  **Apply Theme:**
     Press `Ctrl + E` to open the theme input box and paste the [Lunallena.css](https://github.com/Acercandr0/Lunallena/blob/main/Lunallena.css) code.
