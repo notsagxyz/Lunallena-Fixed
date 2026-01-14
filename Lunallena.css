@@ -424,11 +424,12 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 
 [class*="_dataContainer_"] > div > div:nth-child(3) {
     border-radius: 10px;
-    backdrop-filter: var(--blur-glass);
     margin-left: -15px;
 	padding: 15px;
     width: 65%;
     margin-bottom: 10px;
+    border: var(--border-glass);
+    backdrop-filter: blur(7px);
 }
 
 [class*="backgroundBlur"] {
@@ -502,6 +503,8 @@ div:has(> [class*="imageryContainer"]) {
     transform: translateY(-20px) scale(1.2);
     background-color: var(--bg-solid);
     border: var(--border-glass);
+    box-shadow: none;
+    overflow: hidden;
 }
 
 [class*="_nativeRange_"]::after {
@@ -546,9 +549,8 @@ div[class*="_playQueueWithHeader_"] {
 
 div[class*="_playQueueWithoutHeader_"] {
     gap: 10px;
-    top: 64px;
-    left: 345px;
-    right: auto;
+    top: 190px;
+    right: 120px;
     z-index: 999;
 }
 
@@ -636,10 +638,15 @@ button[data-test^="nowplaying-playqueue-"]:hover {
 }
 
 [class*="_tooltipText_"] {
-    margin-bottom: 10px;
-    background-color: var(--bg-solid);
+    background-color: transparent;
+    backdrop-filter: var(--blur-glass);
     border: var(--border-glass);
     color: white;
+    bottom: auto;
+    right: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: -10px !important;
 }
 
 [class*="_tooltipText_"]::after,
