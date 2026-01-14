@@ -422,7 +422,7 @@ div[data-test="search-results"] > div[class*="container"]::before {
 [data-test*="search-results"] > div[class*="container"] {
     background-color: var(--bg-glass-light);
     backdrop-filter: var(--blur-glass);
-    transform: translateY(-100px);
+    transform: translateY(-70px);
     padding-top: 100px;
     margin-left:-5%;
     margin-right: -5%;
