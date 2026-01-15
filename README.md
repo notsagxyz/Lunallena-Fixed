@@ -1,11 +1,11 @@
 # Lunallena 🌕
 
-"Full moon" Experience for Tidaluna.
- - Auto-hide sidebar & header (they pop up on hover).
- - Quality of life improvements for a smoother workflow.
- - CSS variables so you can customize it exactly how you like.
- - Glassmorphism aesthetic for that clean, modern look.
- - Designed to work with Sidebar 3.0.
+"Full moon" Experience for Tidal (web and desktop app).
+A minimalist, immersive, and elegant interface.
+
+- **Auto-hide:** Sidebar & header are hidden by default (they pop up on hover).
+- **Fully Customizable:** CSS variables allow you to tune colors and effects to your liking.
+- **Glassmorphism:** A clean, modern "frosted glass" aesthetic.
 
 ![Preview](previews/1.png)
 ![Preview](previews/2.png)
@@ -15,34 +15,30 @@
 
 ---
 
-## Installation Guide
+## Browser Installation Guide: Stylus
 
-Follow these steps to get Lunallena up and running:
+The fastest and safest way to use **Lunallena** in your web browser (Chrome, Firefox, Edge, Opera).
 
-1.  **Install Luna Client Mod:**
-    Run the Luna client mod installer. If you don't have it yet, you can download it here:
-    * [**Download Luna Installer**](https://github.com/Inrixia/TidaLuna)
-
-2.  **Open Luna Settings:**
-    After installing, open Tidal, click the **three-dot menu** next to your profile icon, and select **Luna settings**.
-
-3.  **Install Required Plugins:**
-    Go to the **Plugin Store** tab and install the following:
-    * **Themer**: Required to apply the CSS code.
-    * **Tidal Tags**: Required to display playback quality and metadata tags.
-
-4.  **Apply Theme:**
-    Press `Ctrl + E` to open the theme input box and paste the [Lunallena.css](https://github.com/Acercandr0/Lunallena/blob/main/Lunallena.css) code.
+1.  **Install Stylus:** If you don't have it yet, download the extension:
+    * [**Stylus for Chrome/Edge**](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
+    * [**Stylus for Firefox**](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
+2.  **Create New Style:** Click the Stylus icon in your browser toolbar and select **"Write style for: tidal.com/..."**.
+3.  **Apply Code:** Copy the content of [**Lunallena_Stylus.css**](https://github.com/Acercandr0/Lunallena/blob/main/Lunallena_Stylus.css) and paste it into the Stylus editor.
+4.  **Save:** Give it a name (e.g., "Lunallena") and click **Save**. You're done!
 
 ---
 
-## How to Enable Sidebar 3.0
+## 🛠️ Desktop Installation (With Tidaluna)
 
-Lunallena is specifically tweaked for the new sidebar. To activate it:
+Modify desktop client with Luna, follow these steps:
 
-1.  Open **Luna Settings** (Three-dot menu > Luna settings).
-2.  Navigate to the **Experiments** or **Features** tab (depending on your Luna version).
-3.  Look for **Sidebar 3.0** and toggle it to **Enabled**.
+1.  **Install Luna Client Mod:** Run the installer. If you don't have it:
+    * [**Download Luna Installer**](https://github.com/Inrixia/TidaLuna)
+2.  **Open Luna Settings:** In Tidal, click the **three-dot menu** next to your profile icon and select **Luna settings**.
+3.  **Install Required Plugins:** Go to the **Plugin Store** tab and install:
+    * **Themer**: Required to apply the CSS code.
+    * **Tidal Tags**: Required to display playback quality and metadata.
+4.  **Apply Theme:** Press `Ctrl + E` to open the theme input box and paste the [**Lunallena.css**](https://github.com/Acercandr0/Lunallena/blob/main/Lunallena.css) code.
 
 ---
 
