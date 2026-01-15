@@ -294,7 +294,7 @@ div[data-test-module-type="CONTRIBUTOR_HEADER"] header[class*="container"] {
 
 [aria-label="Playlists"][data-test="sidebar-scrollable-nav"] {
     transform: none; 
-    clip-path: inset;
+    clip-path: inset(0);
     overflow-y: auto;
     height: 100%;
 }
