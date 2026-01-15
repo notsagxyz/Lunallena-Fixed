@@ -110,8 +110,8 @@ div[class*="containerRow"][class*="is-desktop"][class*="is-windows"][class*="has
     background-color: var(--bgeneral);
     min-height: 100vh;
     margin-top: 0;
-    margin-left: calc(var(--sidebarWidth) *-1.5);
-    padding-left: 0;
+    margin-left: calc(var(--sidebarWidth));
+    padding-left: 50;
     min-width: 100vh;
 }
 
