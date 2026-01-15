@@ -133,10 +133,6 @@ div[class^="_bar_"] > div[class^="_title_"] * {
     color: white !important;
 }
 
-[class*="_controls_"] {
-    margin-right: 10px;
-}
-
 div[class*="_bar_"] button[class*="_button_"] {
     background: transparent;
 }
