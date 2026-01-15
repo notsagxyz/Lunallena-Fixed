@@ -118,6 +118,7 @@ div[class*="containerRow"][class*="is-desktop"][class*="is-windows"][class*="has
 .mainContent {
     padding-bottom: calc(var(--miniPlayerHeight) + 140px);
     margin-top: 40px;
+    margin-left: 0;
 }
 
 [class*="MuiContainer"] {
