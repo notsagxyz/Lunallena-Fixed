@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Lunallena 🌕
-@version      3.26
+@version      3.261
 @namespace    https://github.com/Acercandr0
 @description  Tidal theme with full screen experience.
 @author       Acercandr0
@@ -132,7 +132,7 @@ div[class*="containerRow"][class*="is-desktop"][class*="is-windows"][class*="has
     right: 2%;
     background-color: var(--bg-glass-light);
     backdrop-filter: var(--blur-glass);
-    margin-top: -60px;
+    margin-top: -58px;
     width: 450px;
     border: var(--border-glass);
     border-top: none;
