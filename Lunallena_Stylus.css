@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Lunallena 🌕
-@version      3.261
+@version      3.262
 @namespace    https://github.com/Acercandr0
 @description  Tidal theme with full screen experience.
 @updateURL    https://raw.githubusercontent.com/Acercandr0/Lunallena/main/Lunallena_Stylus.css
@@ -119,6 +119,7 @@ div[class*="containerRow"][class*="is-desktop"][class*="is-windows"][class*="has
 .mainContent {
     padding-bottom: calc(var(--miniPlayerHeight) + 140px);
     margin-top: 40px;
+    margin-left: 20px;
 }
 
 [class*="MuiContainer"] {
