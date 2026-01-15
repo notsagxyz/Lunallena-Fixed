@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Lunallena 🌕
-@version      3.263
+@version      3.265
 @namespace    https://github.com/Acercandr0
 @description  Tidal theme with full screen experience.
 @updateURL    https://raw.githubusercontent.com/Acercandr0/Lunallena/main/Lunallena_Stylus.css
@@ -202,21 +202,17 @@ div[class*="containerRow"][class*="is-desktop"][class*="is-windows"][class*="has
 }
 
 [class^="_smallHeader_"] {
-    left: 0;
-    right: 0;
-    position: fixed;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    padding-bottom: 20px;
-    width: 100vw;
-    background-color: var(--bg-glass-light) !important;
-    backdrop-filter: var(--blur-glass);
-    border-bottom: var(--border-glass);
-    margin-top: -50px;
+    background: none;
+    margin-top: -40px;
 }
 
 div[class^="_smallHeader_"]::before {
-    opacity: 0;
+    background-color: var(--bg-glass-light);
+    backdrop-filter: var(--blur-glass);
+    left: 0;
+    right: 0;
+    width: 100vw;
+    margin-top: -40px;
 }
 
 div[data-test-module-type="CONTRIBUTOR_HEADER"] header[class*="container"] {
