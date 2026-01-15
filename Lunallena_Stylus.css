@@ -117,7 +117,7 @@ div[class*="containerRow"][class*="is-desktop"][class*="is-windows"][class*="has
 }
 
 .mainContent {
-    padding-bottom: calc(var(--miniPlayerHeight) + 140px);
+    padding-bottom: var(--miniPlayerHeight);
     margin-top: 40px;
     margin-left: 20px;
 }
@@ -213,16 +213,6 @@ div[class^="_smallHeader_"]::before {
     right: 0;
     width: 100vw;
     margin-top: -40px;
-}
-
-div[data-test-module-type="CONTRIBUTOR_HEADER"] header[class*="container"] {
-    background-color: var(--bg-glass-light);
-    backdrop-filter: var(--blur-glass);
-    border-bottom: var(--border-glass);
-    left: 0;
-    padding-left: 120px;
-    padding-right: 5%;
-    height: 140px;
 }
 
 /* ALBUM HEADER */
