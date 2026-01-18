@@ -133,6 +133,7 @@ div[class*="containerRow"][class*="is-desktop"][class*="is-windows"][class*="has
 
 [class*="MuiContainer"] {
     padding-bottom: var(--miniPlayerHeight);
+    margin-top: 70px;
 }
 
 /* =========================================================
