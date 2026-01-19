@@ -165,7 +165,7 @@ div[class*="_bar_"] button[class*="_button_"]:hover svg {
     right: 2vh;
     background-color: var(--bg-glass-light);
     backdrop-filter: var(--blur-glass);
-    margin-top: -55px;
+    margin-top: -50px;
     width: 450px;
     border: var(--border-glass);
     border-radius: 0 0 20px 20px;
@@ -280,7 +280,7 @@ div[data-test-module-type="CONTRIBUTOR_HEADER"] header[class*="container"] {
     height: 75%;
     margin-top: 8vh;
     overflow: visible;
-    left: calc(var(--sidebarWidth) * -1 + 23px);
+    left: calc(var(--sidebarWidth) * -1 + 25px);
     transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
