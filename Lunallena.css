@@ -280,7 +280,7 @@ div[data-test-module-type="CONTRIBUTOR_HEADER"] header[class*="container"] {
     height: 75%;
     margin-top: 8vh;
     overflow: visible;
-    left: calc(var(--sidebarWidth) * -1 + 25px);
+    left: calc(var(--sidebarWidth) * -1 + 20px);
     transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
