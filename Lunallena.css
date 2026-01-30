@@ -474,6 +474,10 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
    ARTIST PAGES
    ========================================================= */
 
+[data-test="artist-profile-header"] [class*="background"] {
+    width: 100vw;
+}
+
 [class*="_dataContainer_"] > div > div:nth-child(3) {
     border-radius: 10px;
     margin-left: -15px;
