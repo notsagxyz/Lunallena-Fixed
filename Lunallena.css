@@ -1,5 +1,5 @@
 /* =========================================================
-   Lunallena 🌕 v4.1
+   Lunallena 🌕 v4.15
    by Acercandr0
    ========================================================= */
 
@@ -456,14 +456,17 @@ div[class^="_overlay_"] {
     z-index: -1;
 }
 
+[class*="resultsContainer"] {
+    padding: 10px;
+}
+
 [data-test*="search-results"] > [class*="container"] {
     background: transparent;
 }
 
 div[data-test="query-suggestions"] {
-    margin-left: -9.7vw;
-    width: 30vw;
-    margin-top: 15px;
+    margin-left: -110px;
+    margin-top: 10px;
     height: calc(80vh - var(--miniPlayerHeight));
     background-color: var(--bg-solid);
     border: var(--border);
@@ -509,7 +512,6 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     border-radius: 20px;
     background-color: var(--bg-glass-light) !important;
     backdrop-filter: var(--blur);
-    -webkit-backdrop-filter: var(--blur);
 }
 
 [data-test="footer-player"]::before {
