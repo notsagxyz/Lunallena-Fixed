@@ -126,8 +126,8 @@ h1 {
     height: 100svh;
     max-height: calc(100svh - var(--os-title-bar-height));
     margin-top: 0;
-    left: calc(var(--sidebarWidth) * -1);
     min-width: 100vw;
+    left: calc(var(--sidebarWidth) * -1);
     --playQueueWidth: 0px;
 }
 
@@ -214,9 +214,8 @@ div[class*="_bar_"] button[class*="_button_"]:hover svg {
     background-color: var(--bg-glass-light);
     backdrop-filter: var(--blur-glass);
     margin-top: -80px;
-    margin-left: calc(var(--sidebarWidth) *-1);
     width: 30vw;
-    left: 55%;
+    left: 50%;
     transform: translateX(-50%);
     border: var(--border);
     border-radius: 0 0 20px 20px;
@@ -322,6 +321,10 @@ div[data-test-module-type="CONTRIBUTOR_HEADER"] header[class*="container"] {
     display: none;
 }
 
+[class*="_sidebarWrapper_"][style="width: 240px;"] {
+    left: -217px;
+}
+
 [class*="_sidebarWrapper_"] {
     border-radius: 0 20px 20px 0;
     left: -47px;
@@ -401,11 +404,11 @@ div[data-test-module-type="CONTRIBUTOR_HEADER"] header[class*="container"] {
    ========================================================= */
 
 [class*="cardContainer"] {
-    margin-left: -100vh;
-    margin-right: -100vh;
-    padding-left: 100vh;
-    padding-right: 100vh;
-    scroll-padding: 100vh;
+    margin-left: -20vh;
+    margin-right: -20vh;
+    padding-left: 20vh;
+    padding-right: 20vh;
+    scroll-padding: 20vh;
 }
 
 [class*="cardContainer"][class*="buttonContainer"] {
