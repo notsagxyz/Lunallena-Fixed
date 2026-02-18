@@ -1,5 +1,6 @@
 /* =========================================================
    Lunallena 🌕 v4.15
+   VISIBLE SIDEBAR VERSION
    by Acercandr0
    ========================================================= */
 
@@ -124,16 +125,17 @@ h1 {
 
 #main {
     height: 100svh;
+    left: calc(var(--sidebarWidth) * -1);
+    padding-left: 50px;
     max-height: calc(100svh - var(--os-title-bar-height));
     margin-top: 0;
     min-width: 100vw;
-    left: calc(var(--sidebarWidth) * -1);
     --playQueueWidth: 0px;
 }
 
 .mainContent {
     min-height: 100svh !important;
-    width: 100vw;
+    width: 98vw;
     padding-bottom: var(--miniPlayerHeight);
 }
 
@@ -164,7 +166,7 @@ h1 {
 /* =========================================================
    QUEUE SIDEBAR
    ========================================================= */
-   
+
 [class*="playQueueWrapper"] {
     height: 100svh;
     margin-left: calc(var(--playQueueWidth) * -1 - 480px);
@@ -330,33 +332,13 @@ div[data-test-module-type="CONTRIBUTOR_HEADER"] header[class*="container"] {
     display: none;
 }
 
-[class*="_sidebarWrapper_"][style="width: 240px;"] {
-    left: -217px;
-}
-
 [class*="_sidebarWrapper_"] {
     border-radius: 0 20px 20px 0;
-    left: -47px;
     border: var(--border);
     border-left: none;
     background-color: var(--bg-glass-light);
     backdrop-filter: var(--blur-glass);
     transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-[class*="_sidebarWrapper_"]:hover {
-    left: 0px;
-}
-
-[class*="_sidebarWrapper_"] > * {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-[class*="_sidebarWrapper_"]:hover > * {
-    opacity: 1;
-    pointer-events: auto;
 }
 
 [aria-label="Navigation sidebar"] {
