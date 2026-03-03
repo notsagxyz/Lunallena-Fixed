@@ -1,5 +1,5 @@
 /* =========================================================
-   Lunallena 🌕 v4.15
+   Lunallena 🌕 v4.2
    by Acercandr0
    ========================================================= */
 
@@ -118,14 +118,14 @@ h1 {
 
 /* Window Maxed Space */
 
-[class*="_bar_"] {
-    border: none !important;
+[class*="_contentOSXDragArea_"] {
+    top: -15px !important;
 }
 
 #main {
     height: 100svh;
-    max-height: calc(100svh - var(--os-title-bar-height));
-    margin-top: 0;
+    max-height: 100svh;
+    margin-top: 100px;
     min-width: 100vw;
     left: calc(var(--sidebarWidth) * -1);
     --playQueueWidth: 0px;
@@ -133,6 +133,7 @@ h1 {
 
 .mainContent {
     min-height: 100svh !important;
+    margin-top: 20px;
     width: 100vw;
     padding-bottom: var(--miniPlayerHeight);
 }
@@ -152,8 +153,8 @@ h1 {
 }
 
 [class*="_sidebarWrapper_"] {
-    top: 2vh;
-    height: 76vh
+    top: 6vh;
+    height: 75vh
 }
 
 [class*="_sectionHeader"] {
@@ -222,7 +223,7 @@ div[class*="_bar_"] button[class*="_button_"]:hover svg {
 #mainHeader {
     background-color: var(--bg-glass-light);
     backdrop-filter: var(--blur-glass);
-    margin-top: -80px;
+    margin-top: -70px;
     width: 30vw;
     left: 50%;
     transform: translateX(-50%);
@@ -234,11 +235,11 @@ div[class*="_bar_"] button[class*="_button_"]:hover svg {
     transition: margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: visible;
     pointer-events: visible;
-    z-index: 9999;
+    z-index: 999;
 }
 
 #mainHeader:hover {
-    margin-top: -30px;
+    margin-top: -25px;
 }
 
 #mainHeader > * {
@@ -336,8 +337,10 @@ div[data-test-module-type="CONTRIBUTOR_HEADER"] header[class*="container"] {
 }
 
 [class*="_sidebarWrapper_"] {
+    margin-top: 14vh;
+    height: 75vh;
     border-radius: 0 20px 20px 0;
-    left: -47px;
+    left: -42px;
     border: var(--border);
     border-left: none;
     background-color: var(--bg-glass-light);
@@ -498,7 +501,6 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     border-radius: 10px;
     margin-left: -15px;
     padding: 15px;
-    max-width: 50%;
     margin-bottom: 10px;
     border: var(--border);
     backdrop-filter: blur(7px);
