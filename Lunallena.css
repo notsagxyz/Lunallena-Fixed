@@ -1,5 +1,5 @@
 /* =========================================================
-   Lunallena 🌕 v4.15
+   Lunallena 🌕 v4.16
    by Acercandr0
    ========================================================= */
 
@@ -521,6 +521,7 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     border-radius: 20px;
     background-color: var(--bg-glass-light) !important;
     backdrop-filter: var(--blur);
+    overflow: hidden;        /* agregado */
 }
 
 [data-test="footer-player"]::before {
@@ -543,16 +544,20 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 }
 
 [aria-label="Progress bar"] {
-    position: fixed;
-    top: -75px;
-    width: 98vw;
-    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
+
 
 [class*="_range_"] {
     background: transparent;
     border-radius: 20px;
+    height: 100%;
 }
+
 
 [data-test="progress-indicator"] {
     background-color: rgba(255, 255, 255, 0.07);
@@ -561,19 +566,24 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 }
 
 [data-test="interaction-layer"] {
-    height: 25px;
-    transform: translateY(-115px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
     pointer-events: auto;
+    z-index: 0;
 }
 
 #progressBar > div > [class*="toolTip"] {
-    bottom: 112px !important;
-    scale: 1;
-    overflow: visible;
+    bottom: 100% !important;
+    margin-bottom: 8px;
     background-color: var(--bg-solid);
     color: white;
     border: var(--border);
     height: 25px;
+    overflow: visible;
 }
 
 [class*="_progress_"] > [data-test="current-time"] {
