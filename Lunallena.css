@@ -569,19 +569,18 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     height: 100% !important;
     background-color: rgba(255, 255, 255, 0.1) !important;
     border-radius: 20px !important; /* Suaviza el borde interno */
-    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: width 0.1s linear;
 }
 
 [data-test="interaction-layer"] {
-    height: 45px;          /* Reducimos el alto de la zona de click */
+    height: 30px;          /* Reducimos el alto de la zona de click */
     width: 100%;
     position: absolute;
     top: 0;                /* La pegamos al borde superior */
     left: 0;
-    pointer-events: auto !important; /* Fuerza a que reciba el click */
-    z-index: 100;          /* Lo ponemos arriba de todo lo demás */
+    pointer-events: auto;
+    z-index: 40;           /* La subimos por encima de todo para que mande el click */
     cursor: pointer;
-    background: transparent;
 }
 
 #progressBar > div > [class*="toolTip"] {
@@ -662,16 +661,14 @@ button[aria-label="Play queue"] {
 }
 
 [class*='_knob_'] {
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
     position: absolute;
     top: 0 !important;
     transform: translateY(-50%);
     background-color: var(--wave-color-solid-accent-fill);
     border-radius: 50%;
     z-index: 30;
-    outline: 15px solid transparent;
-    pointer-events: none; /* <--- IMPORTANTE: El punto deja de estorbar al click */
 }
 
 [class*="nativeRangeContainer"] {
