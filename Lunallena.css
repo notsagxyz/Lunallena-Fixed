@@ -1,5 +1,5 @@
 /* =========================================================
-   Lunallena 🌕 v4.19
+   Lunallena 🌕 v4.20
    by Acercandr0
    ========================================================= */
 
@@ -632,7 +632,7 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     position: absolute;
     top: 0;
     margin-top: -3px;
-    margin-left: -5px;
+    margin-left: 0px;
     border-radius: 50%;
     background-color: var(--wave-color-solid-accent-fill);
     box-shadow: none;
