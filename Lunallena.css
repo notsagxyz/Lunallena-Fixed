@@ -573,15 +573,14 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 }
 
 [data-test="interaction-layer"] {
-    height: 45px;          /* Reducimos el alto de la zona de click */
+    height: 70px;           /* Área generosa para clickear sin fallar */
     width: 100%;
     position: absolute;
-    top: 0;                /* La pegamos al borde superior */
+    top: 0;
     left: 0;
-    pointer-events: auto !important; /* Fuerza a que reciba el click */
-    z-index: 100;          /* Lo ponemos arriba de todo lo demás */
+    pointer-events: auto !important;
+    z-index: 100;           /* Justo debajo del punto verde */
     cursor: pointer;
-    background: transparent;
 }
 
 #progressBar > div > [class*="toolTip"] {
@@ -662,16 +661,16 @@ button[aria-label="Play queue"] {
 }
 
 [class*='_knob_'] {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     position: absolute;
-    top: 0 !important;
-    transform: translateY(-50%);
+    top: 6px !important;    /* Lo bajamos un poco para que no lo corte el borde superior */
+    transform: translate(-50%, -50%);
     background-color: var(--wave-color-solid-accent-fill);
     border-radius: 50%;
-    z-index: 30;
-    outline: 15px solid transparent;
-    pointer-events: none; /* <--- IMPORTANTE: El punto deja de estorbar al click */
+    z-index: 110;           /* Por encima de la capa de interacción */
+    pointer-events: auto;   /* Importante: que detecte el click/drag */
+    box-shadow: 0 0 5px rgba(0,0,0,0.5); /* Le da profundidad para que se vea mejor */
 }
 
 [class*="nativeRangeContainer"] {
@@ -687,12 +686,12 @@ button[aria-label="Play queue"] {
 input[class*="_nativeRange"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 40px;
     border-radius: 50%;
     box-shadow: none;
     transform: translateY(1px);
-    background-color: var(--accent);
+    background: transparent;
 }
 
 /* =========================================================
