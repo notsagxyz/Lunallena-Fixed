@@ -543,36 +543,48 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 }
 
 [aria-label="Progress bar"] {
-    position: absolute; /* Cambiado de fixed a absolute para que se pegue al contenedor padre */
-    top: -12px;         /* Ajusta esto para que "repose" sobre el borde superior */
-    width: 100%;        /* Que ocupe el ancho del reproductor */
-    height: 25px;
+    position: absolute;
+    top: -2px;         /
+    width: 100%;        /* Ocupa el 100% del contenedor del reproductor */
+    height: 4px;        
     left: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
 }
 
 [class*="_range_"] {
     background: transparent;
-    border-radius: 20px;
+    border-radius: 0;
+    width: 100%;
 }
 
 [data-test="progress-indicator"] {
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: rgba(255, 255, 255, 0.1); /* Color de la barra de fondo */
+    border-radius: 20px 20px 0 0; /* Solo redondeamos las esquinas de arriba */
 }
 
 [data-test="interaction-layer"] {
-    height: 100%;
-    transform: translateY(0); /* Eliminamos el desplazamiento negativo que la subía */
+    height: 20px;       /* Un poco más alta para que sea fácil de clickear */
+    width: 100%;
+    transform: translateY(-10px); /* Ajusta este valor hasta que el punto verde toque la barra */
     pointer-events: auto;
+    left: 0;
 }
 
 #progressBar > div > [class*="toolTip"] {
-    bottom: 30px !important; /* Bajamos el tooltip para que no flote tan lejos */
+    bottom: 15px !important;    /* Más cerca de la barra */
+    transform: translateX(-50%); /* Lo centra perfectamente con el mouse */
     scale: 1;
     overflow: visible;
     background-color: var(--bg-solid);
     color: white;
     border: var(--border);
     height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
 }
 
 [class*="_progress_"] > [data-test="duration"] {
