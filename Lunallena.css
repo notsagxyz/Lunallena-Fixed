@@ -512,18 +512,18 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
    ========================================================= */
 
 [data-test="footer-player"] {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 98vw;
-    height: 100px;
-    bottom: 2vh;
-    background-color: var(--bg-glass-light) !important;
-    backdrop-filter: var(--blur);
-    border-radius: 20px;
-    border: var(--border);
-    overflow: hidden !important; 
-    isolation: isolate;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 98vw;
+    height: 100px;
+    bottom: 2vh;
+    background-color: var(--bg-glass-light) !important;
+    backdrop-filter: var(--blur);
+    border-radius: 20px;
+    border: var(--border);
+    overflow: hidden !important; 
+    isolation: isolate;
 }
 
 [data-test="footer-player"]::before {
@@ -539,154 +539,34 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     pointer-events: none;
 }
 
+/* Botones y Controles: Prioridad para que funcionen */
 [data-test="left-column-footer-player"],
 [data-test="play-controls"],
 [data-test="footer-player"] > div:last-child {
-    z-index: 50 !important; /* Bajamos un poco para que el input mande arriba */
-    position: relative;
-    pointer-events: auto;
-}
-[aria-label="Progress bar"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none !important;
+    z-index: 50 !important; 
+    position: relative;
+    pointer-events: auto;
 }
 
-
-[class*="_range_"] {
-    background-color: transparent !important;
-    border: none !important;
-    height: 100%;
-}
-
-[data-test="progress-indicator"] {
-    height: 100% !important;
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 20px !important;
-    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-[data-test="interaction-layer"] {
-    height: 70px;           /* Área generosa para clickear sin fallar */
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: auto !important;
-    z-index: 100;           /* Justo debajo del punto verde */
-    cursor: pointer;
-    display: none !important;
-}
-
-#progressBar > div > [class*="toolTip"] {
-    bottom: 100% !important;
-    margin-bottom: 15px;
-    transform: translateX(-50%);
-    background-color: var(--bg-solid);
-    color: white;
-    border: var(--border);
-    height: 25px;
-    display: flex;
-    align-items: center;
-    padding: 0 8px;
-    z-index: 250; /* Más alto que el input */
-}
-
-
-[class*="_progress_"] > [data-test="current-time"] {
-    position: absolute;
-    left: 50% !important;
-    transform: translateX(-80px) !important; 
-    top: 65px !important;
-    z-index: 101;
-    color: var(--accent);
-}
-
-[class*="_progress_"] > [data-test="duration"] {
-    position: absolute;
-    right: 50% !important;
-    transform: translateX(80px) !important; 
-    top: 65px !important;
-    z-index: 101;
-    opacity: 0.8;
-}
-
-
-[data-test="left-column-footer-player"],
-[class*="_leftColumn_"] {
-    overflow: visible !important;
-}
-
-[class*="imageryContainer"] {
-    height: 64px;
-    margin-top: 4px;
-    margin-left: 2px;
-    border-radius: 8px;
-    scale: 1.3;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-[class*="currentMediaItemDetails"] {
-    margin-left: 2px;
-}
-
-[class*="notFullscreenOverlay"],
-[class*="imageryContainer"] [class*="imageBorder"] {
-    display: none;
-}
-
-[class*="playbackControls"] {
-    margin-top: 2px;
-}
-
-[data-test*="media-state"],
-[aria-label="Shuffle"],
-[aria-label="Repeat"],
-[aria-label="Repeat one"],
-[aria-label="Sound output"],
-[aria-label="toggle now playing screen"] {
-    border-radius: var(--market-core-radius-100);
-}
-
-button[aria-label="Play queue"] {
-    height: 32px;
-    border-radius: var(--market-core-radius-100);
-}
-
-[class*='_knob_'] {
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: 1px !important; /* Casi pegado arriba para que no estorbe */
-    transform: translateX(-50%);
-    background-color: var(--wave-color-solid-accent-fill);
-    border-radius: 50%;
-    z-index: 100; /* Debajo del input nativo */
-    pointer-events: none;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-}
-
+/* El MOTOR del click: Input Nativo Invisible */
 input[class*="_nativeRange"] {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
     width: 100% !important;
-    height: 30px !important;  /* Define el área de click en la parte superior */
-    opacity: 0 !important;     /* Lo hace invisible para que veas tu diseño */
-    z-index: 200 !important;   /* Lo pone por encima de todo para capturar el click */
+    height: 35px !important;  /* Área de click superior */
+    opacity: 0 !important;
+    z-index: 100 !important;  /* Por encima del knob y fondo */
     cursor: pointer !important;
     pointer-events: auto !important;
     margin: 0 !important;
 }
 
+/* Contenedor del Input */
 [class*="nativeRangeContainer"] {
-    border: none !important;   /* Quitamos el borde para que no ensucie el fondo */
+    border: none !important;
     box-shadow: none;
-    transform: none !important; /* Reseteamos el desplazamiento para que cubra el fondo */
+    transform: none !important;
     position: absolute;
     top: 0;
     left: 0;
@@ -698,14 +578,102 @@ input[class*="_nativeRange"] {
     display: none;
 }
 
-
 input[class*="_nativeRange"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 20px;
+    width: 30px;
     height: 40px;
-    background: transparent; /* Invisible para no tapar el punto verde */
+    background: transparent;
     cursor: pointer;
+}
+
+/* Estética: Fondo Gris de Progreso */
+[aria-label="Progress bar"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none !important;
+}
+
+[data-test="progress-indicator"] {
+    height: 100% !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+[class*="_range_"] {
+    background-color: transparent !important;
+    border: none !important;
+    height: 100%;
+}
+
+/* Punto Verde (Knob) */
+[class*='_knob_'] {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 2px !important; 
+    transform: translateX(-50%);
+    background-color: var(--wave-color-solid-accent-fill);
+    border-radius: 50%;
+    z-index: 80;
+    pointer-events: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* Desactivamos la capa de Tidal que bloquea el click directo */
+[data-test="interaction-layer"] {
+    display: none !important;
+}
+
+/* Tooltip y Tiempos */
+#progressBar > div > [class*="toolTip"] {
+    bottom: 100% !important;
+    margin-bottom: 15px;
+    transform: translateX(-50%);
+    background-color: var(--bg-solid);
+    color: white;
+    border: var(--border);
+    height: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    z-index: 150;
+}
+
+[class*="_progress_"] > [data-test="current-time"] {
+    position: absolute;
+    left: 50% !important;
+    transform: translateX(-80px) !important; 
+    top: 65px !important;
+    z-index: 60;
+    color: var(--accent);
+}
+
+[class*="_progress_"] > [data-test="duration"] {
+    position: absolute;
+    right: 50% !important;
+    transform: translateX(80px) !important; 
+    top: 65px !important;
+    z-index: 60;
+    opacity: 0.8;
+}
+
+/* Imagen y Textos */
+[class*="imageryContainer"] {
+    height: 64px;
+    margin-top: 4px;
+    margin-left: 2px;
+    border-radius: 8px;
+    scale: 1.3;
+}
+
+[class*="currentMediaItemDetails"] {
+    margin-left: 15px;
 }
 
 /* =========================================================
