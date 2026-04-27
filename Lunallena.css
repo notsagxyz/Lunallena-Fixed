@@ -521,9 +521,9 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     background-color: var(--bg-glass-light) !important;
     backdrop-filter: var(--blur);
     border-radius: 20px;
+    border: var(--border);
     overflow: hidden !important; 
-    isolation: isolate; /* Esto fuerza al navegador a respetar el contenedor para los hijos */
-}
+    isolation: isolate; /* Fuerza el recorte perfecto de las esquinas */
 }
 
 [data-test="footer-player"]::before {
@@ -542,19 +542,21 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 [data-test="left-column-footer-player"],
 [data-test="play-controls"],
 [data-test="footer-player"] > div:last-child {
-    z-index: 1;
+    z-index: 30 !important; 
+    position: relative;
+    pointer-events: auto;
 }
 
 [aria-label="Progress bar"] {
     position: absolute;
-    top: 0;                /* Alineada arriba del todo */
+    top: 0;
     left: 0;
     width: 100%;
-    height: 100%;          /* Alto total para llenar el fondo */
+    height: 100%;
     margin: 0;
     padding: 0;
-    z-index: 0;            /* Detrás de los botones */
-    pointer-events: none;  /* Para que no bloquee los clicks en pausa/play */
+    z-index: 0;
+    pointer-events: none; /* No bloquea clicks en botones */
 }
 
 [class*="_range_"] {
@@ -566,54 +568,55 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 [data-test="progress-indicator"] {
     height: 100% !important;
     background-color: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 20px !important; 
-    transition: width 0.1s linear; /* Para que el movimiento sea fluido y no a saltos */
+    border-radius: 20px !important; /* Suaviza el borde interno */
+    transition: width 0.1s linear;
 }
 
 [data-test="interaction-layer"] {
     height: 100%;
     width: 100%;
-    transform: translateY(0);
     position: absolute;
     top: 0;
+    left: 0;
     pointer-events: auto;
-    z-index: 20; /* Por encima de todo para poder clickear */
+    z-index: 5; /* Por debajo de botones, por encima del fondo */
 }
 
 #progressBar > div > [class*="toolTip"] {
-    bottom: 15px !important;    /* Más cerca de la barra */
-    transform: translateX(-50%); /* Lo centra perfectamente con el mouse */
-    scale: 1;
-    overflow: visible;
+    bottom: 100% !important;
+    margin-bottom: 10px;
+    transform: translateX(-50%);
     background-color: var(--bg-solid);
     color: white;
     border: var(--border);
     height: 25px;
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 0 8px;
+    z-index: 50;
+}
+
+
+[class*="_progress_"] > [data-test="current-time"] {
+    position: absolute;
+    left: 50% !important;
+    transform: translateX(-80px) !important; 
+    top: 65px !important;
+    margin: 0 !important;
+    z-index: 10;
+    color: var(--accent);
 }
 
 [class*="_progress_"] > [data-test="duration"] {
     position: absolute;
-    right: 350px;       /* Lo mueve a la derecha, cerca del tiempo actual */
-    top: 65px;          /* Lo baja al cuerpo del reproductor */
-    margin: 0;          /* Limpiamos márgenes anteriores */
-    z-index: 10;        /* Para que no lo tape el fondo gris */
-    font-weight: bold;
+    right: 50% !important;
+    transform: translateX(80px) !important; 
+    top: 65px !important;
+    margin: 0 !important;
+    z-index: 10;
     opacity: 0.8;
 }
 
-[class*="_progress_"] > [data-test="current-time"] {
-    position: absolute;
-    left: 310px;        /* Ajuste para que queden cerca del centro como en la captura */
-    top: 65px;
-    margin: 0;
-    z-index: 10;
-    color: var(--accent);
-    font-weight: bold;
-}
 
 [data-test="left-column-footer-player"],
 [class*="_leftColumn_"] {
@@ -659,18 +662,12 @@ button[aria-label="Play queue"] {
 [class*='_knob_'] {
     width: 10px;
     height: 10px;
-    margin-left: -6px;
-    
-    /* Cambios aquí para alinearlo al borde superior */
     position: absolute;
     top: 0 !important;
-    margin-top: 0 !important;
-    transform: translateY(-50%); /* Lo centra justo en la línea del borde */
-    
-    border-radius: 50%;
-    box-shadow: none;
+    transform: translateY(-50%);
     background-color: var(--wave-color-solid-accent-fill);
-    z-index: 30; /* Asegura que se vea por encima de la barra */
+    border-radius: 50%;
+    z-index: 30;
 }
 
 [class*="nativeRangeContainer"] {
