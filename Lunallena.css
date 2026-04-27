@@ -526,7 +526,7 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     border-radius: 20px;
     background-color: var(--bg-glass-light) !important;
     backdrop-filter: var(--blur);
-    overflow: hidden;
+    /* Sin overflow: hidden para no cortar el knob */
 }
 
 [data-test="footer-player"]::before {
@@ -554,10 +554,8 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     top: 0;
     left: 0;
     width: 100%;
-    height: 6px;
-    border-radius: 20px 20px 0 0;
-    overflow: hidden;
-    z-index: 3;
+    height: 4px;
+    z-index: 10;
 }
 
 [class*="_range_"] {
@@ -566,45 +564,52 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 }
 
 [data-test="progress-indicator"] {
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: rgba(255, 255, 255, 0.15);
+    height: 4px;
+    border-radius: 2px;
 }
 
 [data-test="interaction-layer"] {
-    height: 6px;
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 100%;
+    height: 20px;
     transform: none;
     pointer-events: auto;
 }
 
+
 [class*="_progress_"] > [data-test="current-time"] {
     position: absolute;
     left: 10px;
-    bottom: 8px;
+    top: 8px;
     margin: 0;
     color: var(--accent);
+    font-size: 11px;
 }
 
 [class*="_progress_"] > [data-test="duration"] {
     position: absolute;
     right: 10px;
-    bottom: 8px;
+    top: 8px;
     margin: 0;
+    font-size: 11px;
 }
 
 #progressBar > div > [class*="toolTip"] {
-    bottom: 20px !important;
+    bottom: 16px !important;
     background-color: var(--bg-solid);
     color: white;
     border: var(--border);
     height: 25px;
-    scale: 1;
-    overflow: visible;
 }
 
 [class*='_knob_'] {
     width: 10px;
     height: 10px;
-    margin-left: -6px;
-    margin-top: -2px;
+    margin-left: -5px;
+    margin-top: -3px;
     border-radius: 50%;
     box-shadow: none;
     background-color: var(--wave-color-solid-accent-fill);
