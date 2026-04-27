@@ -509,6 +509,7 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 /* =========================================================
    FOOTER PLAYER
    ========================================================= */
+
 [data-test="footer-player"] {
     position: fixed;
     left: 50%;
@@ -516,12 +517,11 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     width: 98vw;
     height: 100px;
     bottom: 2vh;
+    border-radius: 20px;
     background-color: var(--bg-glass-light) !important;
     backdrop-filter: var(--blur);
-    border-radius: 20px;
     border: var(--border);
-    overflow: hidden !important;
-    isolation: isolate;
+    overflow: hidden;
 }
 
 [data-test="footer-player"]::before {
@@ -532,49 +532,61 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     border-bottom: none;
     border-radius: inherit;
     pointer-events: none;
+    z-index: 2;
 }
 
 [data-test="left-column-footer-player"],
 [data-test="play-controls"],
 [data-test="footer-player"] > div:last-child {
-    z-index: 30 !important;
+    z-index: 10 !important;
     position: relative;
     pointer-events: auto;
 }
 
+/* Barra de progreso como fondo del footer */
 [aria-label="Progress bar"] {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0; padding: 0;
-    z-index: 0;
-    pointer-events: none !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 1 !important;
 }
 
 [class*="_range_"] {
     background-color: transparent !important;
     border: none !important;
-    height: 100%;
+    height: 100% !important;
+    border-radius: 0 !important;
 }
+
 [data-test="progress-indicator"] {
     height: 100% !important;
-    background-color: rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.07) !important;
     border-radius: 20px !important;
     transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 [data-test="interaction-layer"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
     height: 100% !important;
-    width: 100%;
-    position: absolute;
-    top: 0; left: 0;
+    z-index: 5 !important;
     pointer-events: auto !important;
-    z-index: 5;                            /* Más bajo que los controles (z-index: 30) */
     cursor: pointer;
     background: transparent;
 }
 
+/* Bloquea que el interaction-layer abra now playing */
+[data-test="footer-player"] [data-test="interaction-layer"] {
+    pointer-events: auto !important;
+}
+
+/* Tooltip del progreso */
 #progressBar > div > [class*="toolTip"] {
     bottom: 100% !important;
     margin-bottom: 10px;
@@ -589,27 +601,39 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     z-index: 50;
 }
 
-
+/* Tiempos centrados debajo de los controles */
 [class*="_progress_"] > [data-test="current-time"] {
     position: absolute;
     left: 50% !important;
-    transform: translateX(-80px) !important; 
+    transform: translateX(-80px) !important;
     top: 65px !important;
     margin: 0 !important;
-    z-index: 10;
+    z-index: 15;
     color: var(--accent);
 }
 
 [class*="_progress_"] > [data-test="duration"] {
     position: absolute;
     right: 50% !important;
-    transform: translateX(80px) !important; 
+    transform: translateX(80px) !important;
     top: 65px !important;
     margin: 0 !important;
-    z-index: 10;
+    z-index: 15;
     opacity: 0.8;
 }
 
+/* Knob */
+[class*='_knob_'] {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 0 !important;
+    transform: translateY(-40%);
+    background-color: var(--wave-color-solid-accent-fill);
+    border-radius: 50%;
+    z-index: 20;
+    pointer-events: none;
+}
 
 [data-test="left-column-footer-player"],
 [class*="_leftColumn_"] {
@@ -652,20 +676,6 @@ button[aria-label="Play queue"] {
     border-radius: var(--market-core-radius-100);
 }
 
-[class*='_knob_'] {
-    width: 14px;
-    height: 14px;
-    position: absolute;
-    top: 0 !important;
-    transform: translateY(-50%);
-    background-color: var(--wave-color-solid-accent-fill);
-    border-radius: 50%;
-    z-index: 30;
-    outline: none;
-    pointer-events: none;
-    margin-top: 1px;                       /* Lo baja apenas dentro del overflow */
-}
-
 [class*="nativeRangeContainer"] {
     border: var(--border);
     box-shadow: none;
@@ -686,7 +696,6 @@ input[class*="_nativeRange"]::-webkit-slider-thumb {
     transform: translateY(1px);
     background-color: var(--accent);
 }
-
 /* =========================================================
    NOW PLAYING
    ========================================================= */
